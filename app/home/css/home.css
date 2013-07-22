@@ -1,6 +1,25 @@
-
-
-
 .panel{
 	border: 1px solid #000;
+}
+header.hero-unit{
+	padding:20px;
+	margin-bottom: 20px;
+}
+.chat-log{
+    overflow:   none;
+    position:   relative;
+    width:      100%;
+    height:     400px;
+}
+.chatmessages{
+    overflow:   auto;
+    position:   absolute;
+    max-height: 400px;
+}
+
+.username{
+	color: #66AAAA;
+}
+.myname{
+	color: #2233AA;
 }
