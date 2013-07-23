@@ -26,19 +26,24 @@
       </div>
     </div>
 
-    <div ng-view class="span7 panel"></div>
-
-    <div class="span3 panel">
+    <div class="span10">
       <div class="row-fluid">
-        <div class="span12 text-center">Users</div>
-      </div>
-       <div class="row-fluid">
-        <input type="text" class="span10 offset1 text-center" ng-model="currentUser.name" value={{ currentUser.name }}>
-      </div>
-       <div class="row-fluid">
-          <ul ng-repeat="user in users" class="text-center unstyled">
-            <li>{{user.name}}</li>
-          </ul>
+
+        <div ng-view class="span9 panel"></div>
+
+        <div class="span3 panel">
+          <div class="row-fluid">
+            <div class="span12 text-center">Users</div>
+          </div>
+           <div class="row-fluid">
+            <input type="text" class="span10 offset1 text-center" ng-model="currentUser.name" value={{ currentUser.name }}>
+          </div>
+           <div class="row-fluid">
+              <ul ng-repeat="user in usersInRoom" class="text-center unstyled">
+                <li>{{user.name}}</li>
+              </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>
