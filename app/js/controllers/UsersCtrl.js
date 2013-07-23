@@ -1,12 +1,17 @@
-chatterBox.controller('UsersCtrl', function UsersCtrl($scope) {
+chatterBox.controller('UsersCtrl', function UsersCtrl($scope, $http) {
 
-  $scope.users=[
-  {"name": "EdmundQ"},
-  {"name": "Anonymous12"},
-  {"name": "Anonymous23"},
-  {"name": "Anonymous108"}
-  ]
+$scope.users = [];
+$http.get('fixtures/users.json').success(function(data) {
+    $scope.users = data;
+    $scope.currentUser = getUser(3, $scope.users);
+});
 
-  $scope.currentUser = $scope.users[0];
+function getUser(id, array){
+    for(i=0;i<array.length;i++){
+      if(array[i].id == id){
+        return array[i];
+      }
+    }
+  }
 
 });

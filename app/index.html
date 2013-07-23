@@ -16,35 +16,17 @@
 
 <div class="container-fluid" ng-controller="UsersCtrl">
   <div class="row-fluid">
-    <div class="span2 panel">
+
+    <div class="span2 panel" ng-controller="RoomsCtrl">
       <div class="row-fluid">
         <div class="span12 text-center">Rooms/Topics</div>
+          <ul ng-repeat="room in rooms" class="text-center unstyled">
+            <li><a href="#/room/{{ room.id }}">{{room.name}}</a></li>
+          </ul>
       </div>
     </div>
 
-    <div class="span7 panel" ng-controller="ChatCtrl">
-      <div class="row-fluid">
-        <div class="span10 offset1 text-center">ChatLog</div>
-      </div>
-      <div class="row-fluid chat-log">
-        <div class="span12 chatmessages">
-          <ul>
-            <li ng-repeat="chat in chatlog" >
-              <span class="myname">{{ chat.user.name }}</span>
-              : {{ chat.message }}
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="row-fluid">
-        <div class="span10 offset1">
-          <form ng-submit="addMessage()">
-            <textarea rows="3" ng-model="message" name="message"></textarea>
-            <button type="submit" class="btn large-btn">Send</button>
-          </form>
-        </div>
-      </div>
-    </div>
+    <div ng-view class="span7 panel"></div>
 
     <div class="span3 panel">
       <div class="row-fluid">
@@ -54,7 +36,7 @@
         <input type="text" class="span10 offset1 text-center" ng-model="currentUser.name" value={{ currentUser.name }}>
       </div>
        <div class="row-fluid">
-          <ul ng-repeat="user in users" class="text-center">
+          <ul ng-repeat="user in users" class="text-center unstyled">
             <li>{{user.name}}</li>
           </ul>
       </div>
@@ -66,9 +48,9 @@
 
 
 <script src="lib/angular.js"></script>
-<script src="lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="js/app.js"></script>
 <script src="js/controllers/UsersCtrl.js"></script>
+<script src="js/controllers/RoomsCtrl.js"></script>
 <script src="js/controllers/ChatCtrl.js"></script>
 
 </body>

@@ -1,0 +1,22 @@
+
+  <div class="row-fluid">
+    <div class="span10 offset1 text-center">ChatLog</div>
+  </div>
+  <div class="row-fluid chat-log">
+    <div class="span12 chatmessages">
+      <ul class="unstyled">
+        <li ng-repeat="chat in chatlog" >
+          <span class="myname">{{ chat.user.name }}</span>
+          : {{ chat.message }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span10 offset1">
+      <form ng-submit="addMessage()">
+        <textarea rows="3" ng-model="message" class="span8" name="message"></textarea>
+        <button type="submit" class="btn large-btn">Send</button>
+      </form>
+    </div>
+  </div>
