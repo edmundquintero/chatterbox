@@ -5,9 +5,13 @@
   <div class="row-fluid chat-log">
     <div class="span12 chatmessages">
       <ul class="unstyled">
-        <li ng-repeat="chat in chatlog" >
-          <span class="myname">{{ chat.user.name }}</span>
-          : {{ chat.message }}
+        <li ng-repeat="chatlog in chatlogs" >
+          <ul class="unstyled">
+            <li ng-repeat="entry in chatlog" >
+              <span class="myname">{{ chat.user.name }}</span>
+              : {{ chat.message }}
+            </li>
+          </ul>
         </li>
       </ul>
     </div>
